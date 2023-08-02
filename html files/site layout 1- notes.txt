@@ -1,0 +1,218 @@
+note general
+    use grid to split up divs
+    add in col width css elements
+
+    colors - white background, blue headers/links, visited links pink, hover links and visited purple
+
+<li>Home</li>
+    <!-- nav menu -->
+    <!-- slideshow -->
+    -flip through three stock images(done)
+    -show the fill circles bottom right corner to show
+        where the slideshow is in the image order(done)
+    -add in glove image sent from dad - done
+    -add arrows to the images to be clicked on - done 
+        also make sure you can click on the circles to 
+        change the slide - done
+    <!-- about blurb -->
+    - one about modal that span the entire
+        div and expands to reveal the entire about blurb
+        make the modal take the entire size of the div
+        center and make distances from all edges even
+        expands on click to take whole div - done
+    <!-- clients list -->
+    - list of clients and registrars that want to be advertised on 
+        the site. will need confirmation from registrar bodies and
+        will need confirmation from clients to be put on list
+        make the div animate through company logos - done
+    <!-- footer -->
+    - have socials written text instead of buttons
+    - have footer with following formating and words
+    - three columns with the following text
+        <!-- company -->
+            <!-- story -->
+            <!-- pricing -->
+            <!-- client stories -->
+            <!-- learn -->
+        <!-- resources -->
+            <!-- nyqc resources -->
+            <!-- social media -->
+            <!-- auditors -->
+        <!-- support -->
+            <!-- news -->
+            <!-- FAQ -->
+            <!-- integration(partners) -->
+            <!-- contact us -->
+<li>Services</li>
+    - audit
+
+<li>Contact Us</li>
+    - email us form
+    - social media (linkedIne etc.)
+
+extras
+-
+
+slideshow
+- make slideshow automatically move - done
+- make current dot not change to blue on hover
+- make all images same size
+- get image of gloves
+
+logo
+- make logo same size as text
+- on hover make logo background color match the highlighted color - done
+    - use javascript and get screenshot of hover color to get hue values - done
+- on scroll make logo image switch to nyqc only without img - done
+- make logo image the entire button - done
+
+wordpress
+- put logo on site - done
+
+notes
+- start with header then move on to next elements
+    - make sure logo hover change works - done
+- make sure header changes for phones - tbd
+- logo highlight - hue 160 sat 0 lum 192 - not used in remake
+- restart without w3 css for more control??? - best method
+    - finish top to bottom
+    - code for smaller screens
+- center nav bar items 
+    - not the best look but text centered - done
+- code for chrome - tbd
+- code for firefox - tbd
+- code for microsoft edges - tbd
+- code for safari - tbd
+
+-restart notes
+ - add in logo - done
+ - add in changing logo - done 
+ - make logo hide on scroll - done
+ - make navbar change on window shrink - to be done
+
+ checklist
+    - home page
+        - logo/navbar
+            -logo resize - done
+            -logo highlight effect - done
+            -logo text (nazeer yakoob quality consulting) - done
+            -nav bar (home,services,contact us) - done
+            -nav bar sticky after scroll - done
+            -logo div hidden on scroll and reappears - done
+            -media queries to hide logo bar and main nav and 
+                and show mobile nav on - done
+            -sticky mobile nav - done
+            -change color - done
+            -add in logo to mobile nav - done
+                - center image for dropdown menu - done
+                - add nyqc hover highlight - tbd - done
+                - method - recreate mobile banner for added control - done
+                - fix css - tbd - done
+                - center menu bars - done
+            - merge onscroll functions - can't - done
+            - when window resized the scroll function deosnt work properly - done
+            - make scroll change push content into visible area when nav changes - done
+            - make sticky nav change seamless - done (fixed all pages)
+            - change logo image code to css from js - tbd
+            - fix clunky spacer fix - tbd
+        - body
+            - slideshow
+                - add in code - done
+                - make images load - done 
+                    - the image references are correct might have something to do
+                    with mistyped code - done
+                - edit css html to create slideshow - done
+                - keep all images same size - tbd
+                - make images hide behind topnav- done
+                - when on slides 2 & 3 the scroll bar bounces back before you can scroll
+                    to the bottom - done
+                - add in glove image - done
+                - resize glove image to same size as other images so content below
+                    doesnt get shifted down - tbd
+            - about
+                - used a modal but the li tags have bad indentation
+                    solution - get rid of modal and leave text in div - done
+            - clients list
+                - create seperate classes - done 
+                - add in text blurbs beside - tbd
+                - photos - tbd - done
+                - make all photos same size - tbd
+                - make selected logo image centered - done
+                - shorten text blurb to quotes then add read more links to direct 
+                    to the client stories page for full paragraph reviews - tbd
+
+                Rena Lam 
+                Director of Global Quality Assurance
+                Mahana Therapeutics 
+                
+                -Nazeer was my ISO 13485 Lead Auditor
+                training instructor. He is very knowledgeable, able to explain
+                interpretation nuances in a way that's easy to understand and is
+                logical, very friendly and fun to talk to, and goes above and
+                beyond when we ask for his help.
+
+                 He made the 4 full day training session enjoyable and
+                 intersting. his experience provided a lot of insight on what
+                 the standards intend to communicate.
+
+                 I recommned Nazeer as he's a joy to learn from and takes what
+                 can oftentimes bea bland topic to something more interesting.
+
+                John (J.Z.) Zagala
+                Canada Head of Programs (PMO) and
+                Quality Assurance (QA) at Boston Scientific            
+
+                -Nazeer is a very professional and extremely capable Lead Auditor
+                with strong attention to detail. I was very impressed with his
+                thorough knowdledge of the Canadian CMDR, US and EU Medical
+                Device regulations and wuality system standards (ISO13485). He
+                very easily extrapolated these various complex requirements into
+                routine QMS processes implemented by corporations. He has a
+                wealth of knowledge gained from his many years of technical
+                training and in-field medical devices experience. It was a great
+                experience working with Nazeer during these past few years
+                including our MDSAP certification and the surveillance
+                assesssments.
+        - footer
+            - change footer with white lines seperating the sections - done - redid footer cleaner look
+    
+    -general (bugs)
+        - when window is scrolled on larger window then resized to smaller window
+        then resized back the nav bar dissapears and doesnt reappear until scroll action - done
+            - on contact us page the size of the nav is smaller in height giving a larger
+            border bottom on the two inactive nav elements - tbd
+        - on pages other than the home page when the window is resized the spacer is too big - done
+        - take out get started in the footer - done
+        - take out  NYQC Features in the footer - done
+        - take out Virtual in the footer - done
+        - take out brokers in the footer - done
+        - take out social media - done
+        - add in blog section into footer - done
+        - for videos section maybe make a youtube or add youtube links - tbd/extra
+        - Remove support section - tbd - done
+        - change integrations to partners - tbd - done
+        - remove contact us from footer - tbd - done 
+        - edit navbar to include resources and about us page - tbd - done
+        - include learn more on about us section on home page to link to about us page - tbd - done
+        - when the window is resized the nav dissapears - tbd
+    
+    -services page
+        - get information on regulatory affairs - tbd
+        - seperate paragraphs - done
+        - move text into divs to center content - done
+
+    -contact us page
+        - add in form - done
+        - add in css for form - done
+        - handle form data using php - (learn php?) tbd
+        - add in spam prevention code - tbd 
+
+    - resources page
+        - add in text - (html/css/js from website_scratch16) tbd - done
+        - add in hyperlinks - (learn asp/php?) tbd
+        - when window is resized the padding shove the content too close to the center
+            change padding on resize - tbd
+
+    - about us page
+        - copy nav main footer css - tbd
+        - copy text and format text from email - tbd

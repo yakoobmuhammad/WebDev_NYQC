@@ -1,0 +1,40 @@
+<html>
+<head>
+    <!-- error where there is a whitespace inbetween li elements
+    solution - set display for ul as inline not block -->
+<style>
+ul.frames{
+  margin: 20px;
+  width: 410px;
+  height: 320px;
+  background-color: grey;
+  float: left;
+  list-style-type: none;
+}
+
+ul.frames  li {
+  display:inline;
+  margin: 0;
+  display: inline;
+  list-style: none;
+}
+
+ul.frames li img {
+  margin: 0 0 0 0;
+}
+</style>
+</head>
+<body>
+<li>
+  <img id="myImg" src="img.jpg" width="102.5px" height="80px"/>
+</li>
+<li>
+  <img id="myImg2" src="img.jpg" width="102.5px" height="80px"/>
+</li>
+<li>
+  <img id="myImg3" src="img.jpg" width="102.5px" height="80px"/>
+</li>
+<li>
+  <img id="myImg4" src="img.jpg" width="102.5px" height="80px"/>
+</li>
+</body>
