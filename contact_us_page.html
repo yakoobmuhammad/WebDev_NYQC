@@ -49,11 +49,12 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        display: inline;
+        display: flex;
     }
 
     .navbar li {
         float: left;
+        flex: 1 0 auto;
     }
 
     .navbar li a {
@@ -76,6 +77,10 @@
 
     .activenav {
         background-color: blue;
+    }
+
+    .inactivenav {
+        background-color: black;
     }
 
     /* mobile nav */
@@ -124,6 +129,25 @@
         height: 50px;
     }
 
+    .main {
+        font-size: 16px;
+    }
+
+    /* form */
+    .formContainer {
+        background-color: black;
+        color: white;
+    }
+
+    .contactUs {
+        padding: 200px;
+    }
+
+    .spacer {
+        height: 200px;
+        display: none;
+    }
+
     /* footer */
     .footer {
         display: flex;
@@ -133,45 +157,39 @@
         height: 100%;
         font-size: 15px;
         text-align: center;
-        background-color: black;
-        border-top-style: solid;
-        border-color: white;
-        border-width: 5px;
+        background-color: white;
     }
 
     .company {
-        width: 33%;
+        width: 50%;
         /* height:400px; */
         padding: 100px 0px 0px 0px;
         margin: 50px 0px 50px 50px;
         overflow: hidden;
         float: left;
         text-align: center;
-        background-color: blue;
-        color: white;
+        color: black;
     }
 
     .resources {
-        width: 33%;
+        width: 50%;
         padding: 75px 0px 0px 0px;
         margin: 50px 10px;
         height: 300px;
         overflow: hidden;
         float: left;
         text-align: center;
-        background-color: blue;
-        color: white;
+        color: black;
     }
 
     .support {
-        width: 33%;
+        width: 0%;
         /* height:400px; */
         padding: 85px 0px 0px 0px;
         margin: 50px 50px 50px 0px;
         overflow: hidden;
         text-align: center;
-        background-color: blue;
-        color: white;
+        color: black;
     }
 
     .download_app {
@@ -271,9 +289,11 @@
         </div>
         <div id="navbar" class="navbar">
             <ul>
-                <li><a class="activenav">Home</a></li>
-                <li><a>Services</a></li>
-                <li><a>Contact Us</a></li>
+                <li><a class="inactivenav">Home</a></li>
+                <li><a class="inactivenav">Services</a></li>
+                <li><a class="inactivenav">About Us</a></li>
+                <li><a class="inactivenav">Resources</a></li>
+                <li><a class="activenav">Contact Us</a></li>
             </ul>
         </div>
     </div>
@@ -286,6 +306,8 @@
                     src="../images/logo original/logoname.jpg" width="70" height="25"></a>
             <div id="myLinks">
                 <a href="#services">Services</a>
+                <a href="#resources">About Us</a>
+                <a href="#resources">Resources</a>
                 <a href="#contactus">Contact Us</a>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -294,36 +316,46 @@
         </div>
     </div>
 
-    <!-- contact form -->
-    <div class="formContainer">
-        <form>
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email"><br>
-            <label for="message">Message: </label><br>
-            <input type="text" id="message" name="message">
-            <input type="submit" value="Submit">
-        </form>
+    <div class="spacer" id="spacer"></div>
+    <div class="main" id="main">
+        <!-- contact form -->
+        <div class="formContainer" id="formContainer">
+            <form class="contactUs">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject"><br><br>
+                <label for="email">Email: </label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message: </label><br>
+                <textarea name="message" rows="10" cols="100">Type message here.</textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </div>
 
     <div class="container">
         <div class="footer">
             <div class="company">
                 <p>Our Story</p>
-                <p>Get Started</p>
+                <p style="display:none;">Get Started</p>
                 <p>Client Stories</p>
+                <p style="display:none;">Blog</p>
             </div>
             <div class="resources">
-                <p>NYQC Features</p>
-                <p>Social Media</p>
-                <p>Virtual Tour</p>
-                <p>Brokers</p>
-                <p>Video</p>
+                <p style="display:none;">NYQC Features</p>
+                <p style="display:none;">Social Media</p>
+                <p style="display:none;">Virtual Tour</p>
+                <p style="display:none;">Brokers</p>
+                <p>Videos</p>
+                <p>Reference Material</p>
+                <p>News</p>
             </div>
-            <div class="support">
+            <div style="display:none;" class="support">
                 <p>Support</p>
                 <p>FAQ</p>
-                <p>Integrations</p><!-- integrations(partners) -->
-                <p>Contact Us</p>
+                <p>Partners</p>
+                <p style="display:none;">Contact Us</p>
             </div>
             <div class="download_app">
                 <p>Google Play</p>
@@ -338,6 +370,8 @@
         if (getWidth() < 1200) {
             document.getElementById("logobar").style.display = "none";
             document.getElementById("navbar").style.overflow = "hidden";
+            document.getElementById("spacer").style.display = "none";
+     
         } else if (getWidth() > 1200) {
             document.getElementById("logobar").style.display = "block";
             document.getElementById("navbar").style.overflow = "visible";
@@ -345,6 +379,7 @@
             document.getElementById("navbar").style.top = "150";
             document.getElementById("navbar").style.zIndex = "1";
             document.getElementById("main").style.zIndex = "-1";
+            document.getElementById("spacer").style.display = "none";
         }
     }
 
@@ -357,14 +392,18 @@
                 document.getElementById("navbar").style.position = "fixed";
                 document.getElementById("navbar").style.zIndex = "1";
                 document.getElementById("main").style.zIndex = "-1";
+                document.getElementById("navbar").style.borderBottom = "5px solid white";
+                document.getElementById("spacer").style.display = "block";
+                document.getElementById("spacer").style.height = "200px";
             }
             else if (window.pageYOffset < 140) {
                 document.getElementById("logobar").style.display = "block";
                 document.getElementById("navbar").style.overflow = "visible";
                 document.getElementById("navbar").style.position = "relative";
+                document.getElementById("navbar").style.borderBottom = "0px";
+                document.getElementById("spacer").style.display = "none";
             }
         }
-        /* alert(window.pageYOffset); */
     }
 
     function myFunction() {
