@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<title>website from scratch Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+    }
+
+    .logobar {
+        height: 150px;
+        transition: top 0.3s;
+    }
+
+    .logotext {
+        float: right;
+        font-size: 75px;
+        padding: 30px 30px;
+    }
+
+    .logotext:hover {
+        color: blue;
+    }
+
+    .navmenu {
+        border-bottom-style: solid;
+        border-color: white;
+    }
+
+    .navbar {
+        height: 45px;
+        width: 100%;
+        background-color: black;
+        box-sizing: border-box;
+        padding: 0px 0px;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .navbar li {
+        float: left;
+        flex: 1 0 auto;
+    }
+
+    .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 8px 8px;
+        text-decoration: none;
+    }
+
+    .navbar li a:hover:not(.activenav) {
+        background-color: white;
+        color: black;
+    }
+
+    .navbar li a:hover {
+        background-color: white;
+        color: blue;
+    }
+
+    .activenav {
+        background-color: blue;
+    }
+
+    /* mobile nav */
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-bottom: 5px solid blue;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .topnav a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .logoactive {
+        background-color: white;
+        height: 50px;
+    }
+
+    .inactivenav {
+        background-color: black;
+    }
+
+    .icon {
+        height: 50px;
+    }
+
+    .spacer {
+        height: 200px;
+        display: none;
+    }
+
+    .main {
+        padding: 15px;
+        background-color: black;
+        /* height: 1500px; */
+        color: white;
+        text-align: center;
+    }
+
+    /* footer */
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 5px;
+        height: 100%;
+        font-size: 15px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .company {
+        width: 50%;
+        /* height:400px; */
+        padding: 100px 0px 0px 0px;
+        margin: 50px 0px 50px 50px;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        color: black;
+    }
+
+    .resources {
+        width: 50%;
+        padding: 75px 0px 0px 0px;
+        margin: 50px 10px;
+        height: 300px;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        color: black;
+    }
+
+    .support {
+        width: 0%;
+        /* height:400px; */
+        padding: 85px 0px 0px 0px;
+        margin: 50px 50px 50px 0px;
+        overflow: hidden;
+        text-align: center;
+        color: black;
+    }
+
+    .download_app {
+        display: none;
+    }
+
+    .listtext {
+        list-style: none;
+
+    }
+
+    .hr {
+        color: white;
+    }
+
+    .servicesContainer {
+        margin: 50px 150px 50px 150px;
+        padding: 0px 50px 0px 0px;
+    }
+
+    .servicesContainer ul {
+        text-align: left;
+    }
+
+    @media only screen and (max-width:600px) {
+        .main {
+            z-index: 0;
+        }
+
+        .topnav {
+            display: block;
+            z-index: 1;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width:600px) {
+        .main {
+            z-index: 0;
+        }
+
+        .topnav {
+            display: block;
+            z-index: 1;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        .topnav {
+            display: block;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .topnav {
+            display: block;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width:1200px) {
+        .topnav {
+            display: none;
+        }
+
+        .logobar {
+            display: block;
+        }
+
+        .navbar {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <div class="navmenu">
+        <div id="logobar" class="logobar">
+            <img id="logoimage" class="logoimage" onmouseover="this.src='../images/logo original/nyqc logo.jpg'"
+                onmouseout="this.src='../images/logo original/logoimg.jpg'" src="../images/logo original/logoimg.jpg"
+                width="150" height="150">
+            <a id="" class="logotext">NYQC</a>
+        </div>
+        <div id="navbar" class="navbar">
+            <ul>
+                <li><a class="inactivenav">Home</a></li>
+                <li><a class="activenav">Services</a></li>
+                <li><a class="inactivenav">About Us</a></li>
+                <li><a class="inactivenav">Resources</a></li>
+                <li><a class="inactivenav">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--  mobile navbar-->
+    <div class="navmenu">
+        <div class="topnav">
+            <a href="#home" class="logoactive" id="topnav" onmouseover="mouseOverLogo();"
+                onmouseout="mouseOutLogo();"><img alt="topnav" id="logotopnav"
+                    src="../images/logo original/logoname.jpg" width="70" height="25"></a>
+            <div id="myLinks">
+                <a href="#services">Services</a>
+                <a href="#resources">About Us</a>
+                <a href="#resources">Resources</a>
+                <a href="#contactus">Contact Us</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="spacer" id="spacer"></div>
+    <div class="main" id="main">
+        <div class="servicesContainer">
+            <h1>Services Offered</h1>
+            <ul>
+                <li><a>Internal Quality Audits</a></li>
+                <li><a>Training</a></li>
+                <li><a>Supplier Audits</a></li>
+            </ul>
+            <hr>
+            <h1>ISO 9001:2015</h1>
+            <ul>
+                <li><a>Is a Quality Management Standard which stipulates requirements for Quality Management Systems.
+                        The
+                        standard helps businesses and companies to improve efficiency and enhance customer satisfaction
+                        and services.
+                        Also, the standard focuses on continual improvement</a></li>
+                <li><a>Suitable for all sizes of organizations : Small, large</a></li>
+                <li><a>Suitable for all types of organizations : Service and Manufacturing</a></li>
+                <li><a>Suitable for all sectors of organizations : Government and Private sector</a></li>
+                <li><a>Based on Quality Management Principles</a></li>
+            </ul>
+            <hr>
+            <h1>ISO 13485:2016</h1>
+            <p>ISO 13485, Medical devices – Quality management systems – Requirements for regulatory purposes, is an
+                internationally recognized standard which sets out the requirements for a quality management system
+                specific
+                to the medical devices industry.</p>
+
+            <p>The Standard specifies requirements for a quality management system where an organization needs to
+                demonstrate its ability to provide medical devices and related services which consistently meet
+                applicable regulatory
+                requirements and customer requirements.</p>
+
+            <ul>
+                <li><a>Organizations can be involved in one or more stages of the life-cycle of medical devices,
+                        including design and development, production, installation, servicing, storage and distribution
+                        of a medical
+                        device and design and development or provision of associated activities (e.g. technical
+                        support).</a></li>
+                <li><a>Can be use by suppliers or external parties who provide product, including quality management
+                        system-related services to such organizations. Ex. Sterilization companies</a></li>
+            </ul>
+            <hr>
+            <h1>MDSAP Training</h1>
+            <p>The MDSAP was implemented-based on requirements that are defined in the IMDRF MDSAP Model; Five
+                participating countries – Australia, Brazil, Canada , Japan and the USA</p>
+
+            <ul class="listtext">
+                <p>Regulatory authorities:</p>
+                <li><a>1. TGA</a></li>
+                <li><a>2. ANVISA</a></li>
+                <li><a>3. Health Canada</a></li>
+                <li><a>4. MHLW/PMDA</a></li>
+                <li><a>5. FDA</a></li>
+            </ul>
+            <hr>
+            <h1>Regulatory Affairs</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                eget quam a lacus ultrices condimentum. Etiam mollis placerat lorem et
+                porta. Aliquam sit amet cursus elit, sed molestie quam. Integer ut
+                faucibus tortor. Donec finibus, lectus nec venenatis pharetra, velit
+                purus rhoncus lorem, ut ullamcorper odio felis vitae sem. Fusce vel
+                malesuada eros. Aenean quis justo at lectus consectetur convallis quis a
+                felis. Proin lobortis quam ut ligula mollis, sit amet ornare justo
+                cursus. </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer">
+            <div class="company">
+                <p>Our Story</p>
+                <p style="display:none;">Get Started</p>
+                <p>Client Stories</p>
+                <p style="display:none;">Blog</p>
+            </div>
+            <div class="resources">
+                <p style="display:none;">NYQC Features</p>
+                <p style="display:none;">Social Media</p>
+                <p style="display:none;">Virtual Tour</p>
+                <p style="display:none;">Brokers</p>
+                <p>Videos</p>
+                <p>Reference Material</p>
+                <p>News</p>
+            </div>
+            <div style="display:none;" class="support">
+                <p>Support</p>
+                <p>FAQ</p>
+                <p>Partners</p>
+                <p style="display:none;">Contact Us</p>
+            </div>
+            <div class="download_app">
+                <p>Google Play</p>
+                <p>Apple iOS</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onresize = function () {
+        if (getWidth() < 1200) {
+            document.getElementById("logobar").style.display = "none";
+            document.getElementById("navbar").style.overflow = "hidden";
+            document.getElementById("spacer").style.display = "none";
+        } else if (getWidth() > 1200) {
+            document.getElementById("logobar").style.display = "block";
+            document.getElementById("navbar").style.overflow = "visible";
+            document.getElementById("navbar").style.position = "relative";
+            document.getElementById("navbar").style.top = "150";
+            document.getElementById("navbar").style.zIndex = "1";
+            document.getElementById("main").style.zIndex = "-1";
+            document.getElementById("spacer").style.display = "none";
+        }
+    }
+
+    window.onscroll = function () {
+        if (getWidth() > 1200) {
+            if (window.pageYOffset > 150) {
+                document.getElementById("logobar").style.display = "none";
+                document.getElementById("navbar").style.top = "0";
+                document.getElementById("navbar").style.overflow = "hidden";
+                document.getElementById("navbar").style.position = "fixed";
+                document.getElementById("navbar").style.zIndex = "1";
+                document.getElementById("main").style.zIndex = "-1";
+                document.getElementById("navbar").style.borderBottom = "5px solid white"
+                document.getElementById("spacer").style.display = "block";
+            }
+            else if (window.pageYOffset < 140) {
+                document.getElementById("logobar").style.display = "block";
+                document.getElementById("navbar").style.overflow = "visible";
+                document.getElementById("navbar").style.position = "relative";
+                document.getElementById("navbar").style.borderBottom = "0px"
+                document.getElementById("spacer").style.display = "none";
+            }
+        }
+        /* alert(window.pageYOffset); */
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function getWidth() {
+        /* alert(self.innerWidth); */ /* debugging line */
+        return self.innerWidth;
+        /*if (self.innerWidth) {return self.innerWidth;}
+        if (document.documentElement && document.documentElement.clientWidth) {return document.documentElement.clientWidth;}
+        if (document.body) {return document.body.clientWidth;} */
+    }
+
+    function mouseOverLogo() {
+        document.getElementById("logotopnav").setAttribute('src', '../images/logo edited/logoname highlight.jpg');
+        /*alert("hello"); */
+    }
+
+    function mouseOutLogo(element) {
+        document.getElementById("logotopnav").setAttribute('src', '../images/logo original/logoname.jpg')
+        /*alert("bye"); */
+    }
+</script>

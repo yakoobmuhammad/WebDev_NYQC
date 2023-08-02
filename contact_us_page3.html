@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<title>website from scratch Contact Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+    }
+
+    /* main nav */
+    .logobar {
+        height: 150px;
+        transition: top 0.3s;
+    }
+
+    .logotext {
+        float: right;
+        font-size: 75px;
+        padding: 30px 30px;
+    }
+
+    .logotext:hover {
+        color: blue;
+    }
+
+    .navmenu {
+        border-bottom-style: solid;
+        border-color: white;
+    }
+
+    .navbar {
+        height: 45px;
+        width: 100%;
+        background-color: black;
+        box-sizing: border-box;
+        padding: 0px 0px;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .navbar li {
+        float: left;
+        flex: 1 0 auto;
+    }
+
+    .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 8px 8px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.activenav) {
+        background-color: white;
+        color: black;
+    }
+
+    li a:hover {
+        background-color: white;
+        color: blue;
+    }
+
+    .activenav {
+        background-color: blue;
+    }
+
+    .inactivenav {
+        background-color: black;
+    }
+
+    /* mobile nav */
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-bottom: 5px solid blue;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .topnav a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .logoactive {
+        background-color: white;
+        height: 50px;
+    }
+
+    .icon {
+        height: 50px;
+    }
+
+    .main {
+        font-size: 16px;
+    }
+
+    /* form */
+    .formContainer {
+        background-color: black;
+        color: white;
+    }
+
+    .contactUs {
+        padding: 200px;
+    }
+
+    .spacer {
+        height: 200px;
+        display: none;
+    }
+
+    /* footer */
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 5px;
+        height: 100%;
+        font-size: 15px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .company {
+        width: 50%;
+        /* height:400px; */
+        padding: 100px 0px 0px 0px;
+        margin: 50px 0px 50px 50px;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        color: black;
+    }
+
+    .resources {
+        width: 50%;
+        padding: 75px 0px 0px 0px;
+        margin: 50px 10px;
+        height: 300px;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        color: black;
+    }
+
+    .support {
+        width: 0%;
+        /* height:400px; */
+        padding: 85px 0px 0px 0px;
+        margin: 50px 50px 50px 0px;
+        overflow: hidden;
+        text-align: center;
+        color: black;
+    }
+
+    .download_app {
+        display: none;
+    }
+
+    @media only screen and (max-width:600px) {
+        .main {
+            z-index: 0;
+        }
+
+        .topnav {
+            display: block;
+            z-index: 1;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width:600px) {
+        .main {
+            z-index: 0;
+        }
+
+        .topnav {
+            display: block;
+            z-index: 1;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        .topnav {
+            display: block;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .topnav {
+            display: block;
+        }
+
+        .logobar {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width:1200px) {
+        .topnav {
+            display: none;
+        }
+
+        .logobar {
+            display: block;
+        }
+
+        .navbar {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <div class="navmenu">
+        <div id="logobar" class="logobar">
+            <img id="logoimage" class="logoimage" onmouseover="this.src='../images/logo original/nyqc logo.jpg'"
+                onmouseout="this.src='../images/logo original/logoimg.jpg'" src="../images/logo original/logoimg.jpg"
+                width="150" height="150">
+            <a id="" class="logotext">NYQC</a>
+        </div>
+        <div id="navbar" class="navbar">
+            <ul>
+                <li><a class="inactivenav">Home</a></li>
+                <li><a class="inactivenav">Services</a></li>
+                <li><a class="inactivenav">About Us</a></li>
+                <li><a class="inactivenav">Resources</a></li>
+                <li><a class="activenav">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--  mobile navbar-->
+    <div class="navmenu">
+        <div class="topnav">
+            <a href="#home" class="logoactive" id="topnav" onmouseover="mouseOverLogo();"
+                onmouseout="mouseOutLogo();"><img alt="topnav" id="logotopnav"
+                    src="../images/logo original/logoname.jpg" width="70" height="25"></a>
+            <div id="myLinks">
+                <a href="#services">Services</a>
+                <a href="#resources">About Us</a>
+                <a href="#resources">Resources</a>
+                <a href="#contactus">Contact Us</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="spacer" id="spacer"></div>
+    <div class="main" id="main">
+        <!-- contact form -->
+        <div class="formContainer" id="formContainer">
+            <form class="contactUs">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject"><br><br>
+                <label for="email">Email: </label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message: </label><br>
+                <textarea name="message" rows="10" cols="100">Type message here.</textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">
+            <div class="company">
+                <p>Our Story</p>
+                <p style="display:none;">Get Started</p>
+                <p>Client Stories</p>
+                <p style="display:none;">Blog</p>
+            </div>
+            <div class="resources">
+                <p style="display:none;">NYQC Features</p>
+                <p style="display:none;">Social Media</p>
+                <p style="display:none;">Virtual Tour</p>
+                <p style="display:none;">Brokers</p>
+                <p>Videos</p>
+                <p>Reference Material</p>
+                <p>News</p>
+            </div>
+            <div style="display:none;" class="support">
+                <p>Support</p>
+                <p>FAQ</p>
+                <p>Partners</p>
+                <p style="display:none;">Contact Us</p>
+            </div>
+            <div class="download_app">
+                <p>Google Play</p>
+                <p>Apple iOS</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onresize = function () {
+        if (getWidth() < 1200) {
+            document.getElementById("logobar").style.display = "none";
+            document.getElementById("navbar").style.overflow = "hidden";
+            document.getElementById("spacer").style.display = "none";
+     
+        } else if (getWidth() > 1200) {
+            document.getElementById("logobar").style.display = "block";
+            document.getElementById("navbar").style.overflow = "visible";
+            document.getElementById("navbar").style.position = "relative";
+            document.getElementById("navbar").style.top = "150";
+            document.getElementById("navbar").style.zIndex = "1";
+            document.getElementById("main").style.zIndex = "-1";
+            document.getElementById("spacer").style.display = "none";
+        }
+    }
+
+    window.onscroll = function () {
+        if (getWidth() > 1200) {
+            if (window.pageYOffset > 150) {
+                document.getElementById("logobar").style.display = "none";
+                document.getElementById("navbar").style.top = "0";
+                document.getElementById("navbar").style.overflow = "hidden";
+                document.getElementById("navbar").style.position = "fixed";
+                document.getElementById("navbar").style.zIndex = "1";
+                document.getElementById("main").style.zIndex = "-1";
+                document.getElementById("navbar").style.borderBottom = "5px solid white";
+                document.getElementById("spacer").style.display = "block";
+                document.getElementById("spacer").style.height = "200px";
+            }
+            else if (window.pageYOffset < 140) {
+                document.getElementById("logobar").style.display = "block";
+                document.getElementById("navbar").style.overflow = "visible";
+                document.getElementById("navbar").style.position = "relative";
+                document.getElementById("navbar").style.borderBottom = "0px";
+                document.getElementById("spacer").style.display = "none";
+            }
+        }
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function getWidth() {
+        /* alert(self.innerWidth); */ /* debugging line */
+        return self.innerWidth;
+        /*if (self.innerWidth) {return self.innerWidth;}
+        if (document.documentElement && document.documentElement.clientWidth) {return document.documentElement.clientWidth;}
+        if (document.body) {return document.body.clientWidth;} */
+    }
+
+    function mouseOverLogo() {
+        document.getElementById("logotopnav").setAttribute('src', '../images/logo edited/logoname highlight.jpg');
+        /*alert("hello"); */
+    }
+
+    function mouseOutLogo(element) {
+        document.getElementById("logotopnav").setAttribute('src', '../images/logo original/logoname.jpg')
+        /*alert("bye"); */
+    }
+</script>
